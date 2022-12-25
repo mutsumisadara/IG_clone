@@ -1,14 +1,12 @@
 ja:
   activerecord:
     models:
-      blog: ブログ
+      picture: ブログ
       user: ユーザー
     attributes:
-      blog:
-        title: タイトル
+      picture:
         content: 内容
       user:
-        title: タイトル
         name: 名前
         email: メールアドレス
         current_password: 現在のパスワード
