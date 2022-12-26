@@ -5,6 +5,9 @@
   <%= image_tag @picture.image.url %>
 </p>
 
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>
+
 <p>
   <strong>Content:</strong>
   <%= @picture.content %>
