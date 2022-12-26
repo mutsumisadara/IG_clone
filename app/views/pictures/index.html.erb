@@ -16,9 +16,9 @@
         <td><%= picture.image %></td>
         <td><%= picture.content %></td>
         <td><%= picture.user.name %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', picture %></td>
+        <td><%= link_to '編集', edit_picture_path(picture) %></td>
+        <td><%= link_to '削除', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Picture', new_picture_path %>
+<%= link_to '新規投稿', new_picture_path %>
