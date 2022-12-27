@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.1'
+gem 'rexml'
 gem 'faker'
 gem 'carrierwave'
 gem 'mini_magick'

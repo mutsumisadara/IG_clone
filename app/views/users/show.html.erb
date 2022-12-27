@@ -1,6 +1,17 @@
-<h1><%= @user.name %>  マイページ</h1>
+<p>♡Profile♡</p>
+
+<h2><%= @user.name %>
+
+<%= if @user.image.present?
+    image_tag @user.image.url, size: "30x30"
+    else
+    image_tag "", size: "30x30"
+    end %>
+</h2>
 
 <p>メールアドレス: <%= @user.email %></p>
 
+<%= link_to '新規投稿', new_picture_path %>
 <%= link_to '投稿一覧', pictures_path %>
 <%= link_to 'お気に入り一覧', favorites_path %>
+<%= link_to 'プロフィール編集', edit_user_path %>

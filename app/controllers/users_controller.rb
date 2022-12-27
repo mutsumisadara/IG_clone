@@ -33,8 +33,16 @@ class UsersController < ApplicationController
         end
     end
 
+    def set_image
+      @user = User.find(params[:id])
+    end
+
     private
     def user_params
         params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+    def image_params
+      params.require(:user).permit(:image, :image_cache)
     end
 end

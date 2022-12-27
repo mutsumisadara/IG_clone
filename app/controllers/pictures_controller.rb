@@ -65,6 +65,6 @@ class PicturesController < ApplicationController
   def ensure_user
     @pictures = current_user.pictures
     @picture = @pictures.find_by(id: params[:id])
-    redirect_to new_picture_path unless @picture
+    redirect_to pictures_path, notice: "編集または削除できません" unless @picture
   end
 end
