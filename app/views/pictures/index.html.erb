@@ -17,8 +17,10 @@
         <td><%= picture.content %></td>
         <td><%= picture.user.name %></td>
         <td><%= link_to '詳細', picture %></td>
+        <% if picture.user == current_user %>
         <td><%= link_to '編集', edit_picture_path(picture)%></td>
         <td><%= link_to '削除', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

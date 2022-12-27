@@ -18,9 +18,9 @@ class PicturesController < ApplicationController
     @picture = current_user.pictures.build(picture_params)
     if params[:back]
       render :new
-    elsif
-      @picture.save
-        redirect_to pictures_path , notice: "投稿しました！"
+    elsif @picture.save
+      PictureMailer.picture_mail(@picture).deliver
+      redirect_to new_picture_path, notice: "投稿しました！"
     else
       render :new
     end
@@ -62,9 +62,17 @@ class PicturesController < ApplicationController
     params.require(:picture).permit(:image, :image_cache, :content)
   end
 
+  def set_picture
+    @picture = Picture.find(params[:id])
+  end
+
   def ensure_user
     @pictures = current_user.pictures
     @picture = @pictures.find_by(id: params[:id])
     redirect_to pictures_path, notice: "編集または削除できません" unless @picture
   end
+
+  # def picture_params
+  #   params.require(:picture).permit(:name, :email, :content)
+  # end
 end
