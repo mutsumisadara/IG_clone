@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- header {
+header {
     height: 50px;
     background-color: pink;
     font-size: 2rem;
