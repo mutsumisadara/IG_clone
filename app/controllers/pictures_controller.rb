@@ -71,8 +71,4 @@ class PicturesController < ApplicationController
     @picture = @pictures.find_by(id: params[:id])
     redirect_to pictures_path, notice: "編集または削除できません" unless @picture
   end
-
-  # def picture_params
-  #   params.require(:picture).permit(:name, :email, :content)
-  # end
 end

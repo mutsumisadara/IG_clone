@@ -10,6 +10,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  
+  <header><h1>♡IG_clone♡</h1>
+  </header>
+
   <body>
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
@@ -25,4 +29,5 @@
     
     <%= yield %>
   </body>
+  <footer></footer>
 </html>
